@@ -139,3 +139,14 @@ erDiagram
     PERFORMED_SETS ||--o| PR_EVENTS : triggers
 ```
 
+## Constrângeri de unicitate (UNIQUE)
+
+Pe lângă cheile primare și străine prezentate în diagramă, baza de date utilizează următoarele constrângeri de unicitate:
+
+- `USERS.email` – fiecare utilizator trebuie să aibă o adresă de e-mail unică.
+- `MUSCLE_GROUPS.name` – fiecare grupă musculară are un nume unic.
+- `PERSONAL_RECORDS(user_id, exercise_id)` – un utilizator poate avea un singur record personal curent pentru fiecare exercițiu.
+- `PERSONAL_RECORDS.performed_set_id` – o serie poate fi asociată unui singur record personal curent.
+- `PR_EVENTS(session_id, exercise_id)` – un exercițiu poate genera cel mult un eveniment PR într-o sesiune.
+- `PR_EVENTS.performed_set_id` – o serie poate genera cel mult un eveniment PR.
+
