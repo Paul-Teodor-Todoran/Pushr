@@ -59,9 +59,9 @@ Echipa are experiență anterioară cu aceste tehnologii. Alegerea este prelimin
 
 - [Cerințe și priorități](docs/requirements.md)
 - [Scenarii de utilizare și criterii de verificare](docs/use-cases.md)
-- [Specificații textuale ale ecranelor și navigării](docs/wireframes/README.md)
-- [Arhitectura propusă](docs/architecture.md)
-- [Model de date și endpoint-uri](docs/data-model.md)
+- [Wireframe-uri, mockup-uri și fluxuri de navigare](docs/wireframes/README.md)
+- [Arhitectura aplicației și diagrama componentelor](docs/architecture.md)
+- [Model de date, diagrama ERD și endpoint-uri](docs/data-model.md)
 - [Plan de implementare și responsabilități](docs/implementation-plan.md)
 
 Repository: [Paul-Teodor-Todoran/Pushr](https://github.com/Paul-Teodor-Todoran/Pushr).

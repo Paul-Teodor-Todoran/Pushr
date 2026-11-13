@@ -62,4 +62,4 @@ Se propun teste unitare pentru formulele de volum/PR și intervale, teste de int
 
 ## Rezultatul acestei etape
 
-Se livrează exclusiv documentația preliminară. Nu se execută commit, push, configurarea regulilor GitHub sau publicarea aplicației. Planul descrie pașii viitori ai echipei.
+Se livrează documentația preliminară, inclusiv wireframe-urile, mockup-urile și diagramele. Implementarea și publicarea aplicației, precum și configurarea regulilor GitHub, sunt activități viitoare. Planul descrie pașii următori ai echipei.

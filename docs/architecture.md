@@ -2,7 +2,63 @@
 
 ## Abordare
 
-Se propune o aplicație cu frontend React, API REST Express și bază de date PostgreSQL. Backend-ul este un monolit modular: domeniile sunt separate în cod, dar se livrează ca un singur serviciu. Dimensiunea echipei și termenul limitat favorizează o integrare simplă și tranzacții locale. Arhitectura este descrisă textual, fără diagramă, conform cerinței proiectului pentru această documentație.
+Se propune o aplicație cu frontend React, API REST Express și bază de date PostgreSQL. Backend-ul este un monolit modular: domeniile sunt separate în cod, dar se livrează ca un singur serviciu. Dimensiunea echipei și termenul limitat favorizează o integrare simplă și tranzacții locale.
+
+## Diagrama arhitecturii
+
+```mermaid
+flowchart TB
+
+    USER["Utilizator"]
+
+    subgraph FRONTEND["FRONTEND – React + TypeScript + Tailwind CSS"]
+        UI["Interfață utilizator"]
+        AUTH_UI["Autentificare și profil"]
+        PROGRAM_UI["Gestionarea programelor"]
+        WORKOUT_UI["Înregistrarea antrenamentelor"]
+        PROGRESS_UI["Istoric și progres"]
+        CHARTS["Grafice – Recharts"]
+
+        UI --> AUTH_UI
+        UI --> PROGRAM_UI
+        UI --> WORKOUT_UI
+        UI --> PROGRESS_UI
+        PROGRESS_UI --> CHARTS
+    end
+
+    subgraph BACKEND["BACKEND – Node.js + Express"]
+        API["REST API"]
+        AUTH["Modul autentificare și autorizare"]
+        USERS["Modul utilizatori"]
+        EXERCISES["Modul exerciții"]
+        PROGRAMS["Modul programe"]
+        WORKOUTS["Modul antrenamente"]
+        RECORDS["Modul recorduri personale"]
+        HISTORY["Modul istoric și statistici"]
+
+        API --> AUTH
+        API --> USERS
+        API --> EXERCISES
+        API --> PROGRAMS
+        API --> WORKOUTS
+        API --> RECORDS
+        API --> HISTORY
+    end
+
+    subgraph DATABASE["BAZA DE DATE – PostgreSQL"]
+        DB[("Baza de date Pushr")]
+    end
+
+    USER --> UI
+    UI <-->|"HTTP/HTTPS – JSON"| API
+    AUTH -->|"Verificare token JWT"| USERS
+    USERS --> DB
+    EXERCISES --> DB
+    PROGRAMS --> DB
+    WORKOUTS --> DB
+    RECORDS --> DB
+    HISTORY --> DB
+```
 
 ## Componente și responsabilități
 
